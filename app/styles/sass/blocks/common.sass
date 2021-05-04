@@ -1,0 +1,58 @@
+h1.section-title
+  position: relative
+  color: $white
+  font-weight: 700
+  font-size: 36px
+  line-height: 44px
+  margin: 0
+  +media-breakpoint-down(md)
+    font-size: 32px
+    line-height: 38px
+  +media-breakpoint-down(xs)
+    font-size: 24px
+    line-height: 30px
+
+.theme-btn
+  display: inline-block
+  background: $gr-blue
+  position: relative
+  z-index: 2
+  padding: 25px 46px
+  color: $white
+  font-size: 18px
+  line-height: 22px
+  font-weight: 500
+  border-radius: 50px
+  overflow: hidden
+  z-index: 2
+  +media-breakpoint-down(md)
+    font-size: 16px
+    line-height: 18px
+    padding: 22px 38px
+  +media-breakpoint-down(xs)
+    font-size: 14px
+    line-height: 17px
+    padding: 17px 20px
+  &:hover
+    color: $white
+    text-decoration: none
+  &::after
+    content: ""
+    position: absolute
+    top: -10px
+    left: -100%
+    width: 40px
+    height: 120%
+    background: #669cd6
+    z-index: -1
+    transform: rotate(10deg)
+    //animation-delay: 3s
+    animation: 5s linear 2s running infinite themeBtnAnimate
+
+@keyframes themeBtnAnimate
+  0%
+    left: -100%
+  60%
+    left: -50%
+  100%
+    left: 100%

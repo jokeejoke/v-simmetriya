@@ -1,0 +1,23 @@
+.advantages-list
+  position: relative
+  z-index: 1
+  margin: 75px 0 0 0
+  +media-breakpoint-down(md)
+    display: none
+  &__item
+    position: relative
+    padding-left: 32px
+    color: $white
+    margin: 0 -15px 23px
+    font-size: 14px
+    line-height: 17px
+    &::after
+      content: ""
+      position: absolute
+      top: 50%
+      left: 0
+      transform: translateY(-50%)
+      width: 16px
+      height: 12px
+      background-image: url(../images/dist/svg/done.svg)
+      background-size: contain
