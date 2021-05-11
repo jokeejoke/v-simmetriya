@@ -12,6 +12,15 @@ h1.section-title
     font-size: 24px
     line-height: 30px
 
+h2.section-title
+  font-size: 36px
+  line-height: 44px
+  font-weight: 500
+  margin: 0
+  position: relative
+  +media-breakpoint-down(xs)
+    line-height: 32px
+
 .theme-btn
   display: inline-block
   background: $gr-blue
@@ -32,7 +41,7 @@ h1.section-title
   +media-breakpoint-down(xs)
     font-size: 14px
     line-height: 17px
-    padding: 17px 20px
+    padding: 17px 41px
   &:hover
     color: $white
     text-decoration: none
@@ -48,6 +57,8 @@ h1.section-title
     transform: rotate(10deg)
     //animation-delay: 3s
     animation: 5s linear 2s running infinite themeBtnAnimate
+    +media-breakpoint-down(md)
+      height: 200%
 
 @keyframes themeBtnAnimate
   0%
@@ -56,3 +67,53 @@ h1.section-title
     left: -50%
   100%
     left: 100%
+
+.to-top
+  position: fixed
+  z-index: 99
+  bottom: 22px
+  right: 15px
+  width: 48px
+  height: 48px
+  background: $gr-darkGrey
+  border-radius: 15px
+  display: flex
+  justify-content: center
+  align-items: center
+  opacity: 0
+  visibility: hidden
+  transition: $trs
+  +media-breakpoint-down(sm)
+    bottom: 45px
+  button
+    display: flex
+    justify-content: center
+    align-items: center
+    background: transparent
+    border: none
+    width: 45px
+    height: 45px
+    border-radius: 15px
+    background: $white
+  &.active
+    opacity: 1
+    visibility: visible
+
+.hidden-md
+  +media-breakpoint-down(md)
+    display: none
+
+.mfp-fade.mfp-bg
+  opacity: 0
+  transition: all 0.3s ease-out
+  &.mfp-ready
+    opacity: 0.8
+  &.mfp-removing
+    opacity: 0
+.mfp-fade.mfp-wrap .mfp-content
+  opacity: 0
+  transition: all 0.3s ease-out
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content
+  opacity: 1
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content
+  opacity: 0

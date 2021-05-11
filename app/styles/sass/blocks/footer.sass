@@ -1,0 +1,65 @@
+.footer
+  position: relative
+  padding-top: 80px
+  +media-breakpoint-down(md)
+    padding-top: 40px
+  .logotype
+    margin-bottom: 25px
+    +media-breakpoint-down(md)
+      margin-bottom: 32px
+  &-list
+    margin: 0 0 23px 0
+    +media-breakpoint-down(md)
+      margin: 0 0 16px 0
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      li
+        font-size: 14px
+        line-height: 25px
+        font-weight: 300
+        margin-bottom: 10px
+        max-width: 270px
+        +media-breakpoint-down(md)
+          max-width: 100%
+          margin-bottom: 16px
+          line-height: 17px
+        a
+          color: $textColor
+          &:hover
+            text-decoration: none
+    &-title
+      font-size: 14px
+      line-height: 17px
+      margin-bottom: 14px
+      +media-breakpoint-down(md)
+        margin-bottom: 16px
+      a
+        display: block
+        color: $textColor
+        &:hover
+          text-decoration: none
+      &.bold
+        font-weight: 500
+      &.bolder
+        font-weight: 700
+
+.copyright
+  position: relative
+  width: 100%
+  padding: 32px 0
+  text-align: center
+  +media-breakpoint-down(md)
+    padding: 40px 0
+  p
+    margin: 0 auto
+    font-size: 14px
+    line-height: 17px
+    font-weight: 300
+    max-width: 70%
+  &-phone
+    position: absolute
+    top: 50%
+    left: 15px
+    transform: translateY(-50%)

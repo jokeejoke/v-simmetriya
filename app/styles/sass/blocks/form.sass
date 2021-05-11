@@ -1,0 +1,209 @@
+.form
+  position: relative
+  &.default
+    padding: 75px 0
+    +media-breakpoint-down(sm)
+      padding: 40px 0
+  &-section
+    position: relative
+    background: #fff
+    &::after
+      content: ""
+      position: absolute
+      top: 0
+      right: 0
+      width: 49.5%
+      height: 100%
+      background-image: url(../images/dist/form-img.png)
+      background-size: cover
+      background-position: center center
+      background-repeat: no-repeat
+      +media-breakpoint-down(md)
+        display: none
+  &__image
+    max-width: 100%
+    width: 100%
+    height: auto
+    min-height: 100%
+    object-fit: cover
+  &__title
+    font-weight: 500
+    font-size: 36px
+    line-height: 44px
+    +media-breakpoint-down(sm)
+      margin-bottom: 0
+    +media-breakpoint-down(xs)
+      font-size: 24px
+      line-height: 30px
+  &__description
+    position: relative
+    max-width: 434px
+    margin: 30px 0 37px
+    +media-breakpoint-down(sm)
+      max-width: 100%
+      margin: 24px 0 30px
+    p
+      font-weight: 300
+      font-size: 18px
+      line-height: 32px
+      +media-breakpoint-down(sm)
+        font-size: 16px
+        line-height: 18px
+      +media-breakpoint-down(xs)
+        font-size: 14px
+        line-height: 25px
+  &-group
+    position: relative
+    max-width: 83%
+    +media-breakpoint-down(lg)
+      max-width: 90%
+    +media-breakpoint-down(md)
+      max-width: 100%
+    input
+      position: relative
+      width: 100%
+      height: 100%
+      font-size: 18px
+      padding-left: 80px
+      border: none
+      border-radius: 50px
+      color: rgba(30, 30, 30, 0.75)
+      +media-breakpoint-down(sm)
+        font-size: 14px
+        padding-left: 52px
+    textarea
+      width: 100%
+      border: none
+      border-radius: 55px
+      height: 160px
+      font-size: 18px
+      padding: 23px 0 10px 79px
+      color: rgba(30, 30, 30, 0.75)
+      +media-breakpoint-down(sm)
+        font-size: 14px
+        padding: 15px 0 10px 52px
+      +media-breakpoint-down(xs)
+        height: 54px
+  &-item
+    position: relative
+    width: 100%
+    height: 80px
+    background: $gr-darkGrey
+    margin-bottom: 40px
+    padding: 2px
+    border-radius: 50px
+    +media-breakpoint-down(sm)
+      height: 56px
+      margin-bottom: 24px
+    +media-breakpoint-down(xs)
+      padding: 1px
+    &.message
+      border-radius: 55px
+      height: 164px
+      +media-breakpoint-down(xs)
+        height: 56px
+      &::after
+        top: 47px
+        left: 17px
+        width: 50px
+        height: 50px
+        background-image: url(../images/dist/svg/message.svg)
+        +media-breakpoint-down(sm)
+          left: 6px
+          top: 35px
+    &::after
+      content: ""
+      position: absolute
+      top: 50%
+      left: 31px
+      transform: translateY(-50%)
+      background-size: contain
+      background-repeat: no-repeat
+      +media-breakpoint-down(sm)
+        left: 22px
+    &.name
+      &::after
+        width: 19px
+        height: 24px
+        background-image: url(../images/dist/svg/user.svg)
+    &.phone
+      &::after
+        width: 24px
+        height: 24px
+        background-image: url(../images/dist/svg/phone.svg)
+  .political
+    position: relative
+    display: flex
+    margin-top: -6px
+    +media-breakpoint-down(sm)
+      margin-top: 0
+    input
+      display: none
+      &[type="checkbox"]
+        &:checked
+          & + label
+            &::before
+              display: block
+    label
+      position: relative
+      font-weight: 300
+      font-size: 12px
+      line-height: 15px
+      color: rgba(30, 30, 30, 0.5)
+      padding-left: 40px
+      cursor: pointer
+      +media-breakpoint-down(xs)
+        padding-left: 30px
+      &::after
+        content: ""
+        position: absolute
+        top: 1px
+        left: 1px
+        width: 22px
+        height: 22px
+        z-index: 2
+        background: #fff
+        +media-breakpoint-down(xs)
+          width: 14px
+          height: 14px
+      &::before
+        content: ""
+        position: absolute
+        top: 6px
+        left: 4px
+        width: 18px
+        height: 12px
+        background-image: url(../images/dist/svg/arrow-form.svg)
+        background-size: contain
+        background-repeat: no-repeat
+        z-index: 11
+        display: none
+        +media-breakpoint-down(xs)
+          width: 14px
+          height: 8px
+          top: 4px
+          left: 3px
+    &::before
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 24px
+      height: 24px
+      background: $gr-darkGrey
+      +media-breakpoint-down(xs)
+        width: 16px
+        height: 16px
+  &-btn
+    border: none
+    margin-top: 30px
+    padding: 25px 57px
+    +media-breakpoint-down(sm)
+      margin-top: 20px
+    +media-breakpoint-down(xs)
+      padding: 16px 41px
+  &-row
+    display: flex
+    justify-content: space-between
+    .form-item
+      width: 48%

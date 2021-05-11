@@ -1,0 +1,139 @@
+.preview-section
+  position: relative
+  padding: 75px 0
+  background: #fff
+  +media-breakpoint-down(md)
+    padding: 75px 0 30px
+  &-title
+  &.grey
+    background: $white
+    
+
+.info-block
+  margin-top: 55px
+  display: flex
+  +media-breakpoint-down(lg)
+    justify-content: space-between
+  +media-breakpoint-down(md)
+    margin-top: 32px
+  &.reverse
+    flex-direction: row-reverse
+    .info-block-left
+      flex: 0 0 42%
+      +media-breakpoint-down(lg)
+        flex: 0 0 38%
+    .info-block-right
+      flex: 0 0 58%
+      padding-left: 0
+      padding-right: 80px
+      +media-breakpoint-down(lg)
+        padding-right: 0
+      +media-breakpoint-down(md)
+        flex: 0 0 100%
+  &-left
+    flex: 0 0 45%
+    +media-breakpoint-down(lg)
+      flex: 0 0 38%
+    +media-breakpoint-down(md)
+      display: none
+    img
+      max-width: 100%
+      height: 601px
+      max-height: 601px
+      object-fit: cover
+      +media-breakpoint-down(lg)
+        height: 538px
+        max-height: 538px
+  &-right
+    flex: 0 0 55%
+    padding-left: 67px
+    margin-top: -10px
+    +media-breakpoint-down(lg)
+      flex: 0 0 58%
+      padding-left: 40px
+      margin-top: -7px
+    +media-breakpoint-down(md)
+      padding-left: 0
+      flex: 0 0 100%
+  &-text
+    margin-bottom: 40px
+    +media-breakpoint-down(md)
+      margin-bottom: 32px
+    p
+      font-weight: 300
+      font-size: 18px
+      line-height: 32px
+      +media-breakpoint-down(lg)
+        font-size: 14px
+        line-height: 25px
+      b, strong
+        font-weight: 500
+  &-cards
+    position: relative
+    display: flex
+  &-card
+    display: block
+    position: relative
+    width: 270px
+    height: 380px
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
+    margin-right: 20px
+    +media-breakpoint-down(md)
+      width: 33.33%
+      height: 250px
+    +media-breakpoint-down(xs)
+      width: 50%
+    &:hover
+      &::after
+        background: rgba(0, 0, 0, .5)
+      .info-block-card__title
+        bottom: 50px
+    &:last-child
+      margin-right: 0
+    &::after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: linear-gradient(180deg, rgba(30, 30, 30, 0) 0%, rgba(30, 30, 30, 0.5) 100%)
+      transition: $trs
+    &__price
+      color: $white
+      font-size: 14px
+      line-height: 17px
+      display: block
+      position: absolute
+      top: 45px
+      left: 48px
+      z-index: 1
+      +media-breakpoint-down(md)
+        top: 30px
+        left: 30px
+        font-size: 14px
+      +media-breakpoint-down(sm)
+        top: 15px
+        left: 11px
+      +media-breakpoint-down(xs)
+        font-size: 12px
+    &__title
+      position: absolute
+      bottom: 41px
+      left: 48px
+      color: $white
+      font-size: 18px
+      line-height: 32px
+      z-index: 1
+      transition: $trs
+      +media-breakpoint-down(md)
+        bottom: 30px
+        left: 30px
+        font-size: 14px
+      +media-breakpoint-down(sm)
+        left: 11px
+        bottom: 15px
+      +media-breakpoint-down(xs)
+        font-size: 10px

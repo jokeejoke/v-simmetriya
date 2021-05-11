@@ -1,0 +1,168 @@
+.form-popup
+  max-width: 1140px
+  margin: 0 auto
+  background: $white
+  overflow: hidden
+  +media-breakpoint-down(md)
+    max-width: 860px
+  +media-breakpoint-down(sm)
+    max-width: 540px
+  +media-breakpoint-down(xs)
+    max-width: 90%
+  &.callback
+    max-width: 400px
+    border-radius: 15px
+    .form
+      &-btn
+        padding: 20px 30px
+        font-size: 16px
+        margin-top: 20px
+      .political
+        margin-top: 10px
+        label
+          +media-breakpoint-down(sm)
+            font-size: 10px
+            line-height: 12px
+      &-popup-close
+        width: 30px
+        height: 30px
+        background: transparent
+        img
+          max-width: 16px
+      &__title
+        font-size: 24px
+        line-height: 22px
+        font-weight: 600
+      &__description
+        margin: 24px 0
+        p
+          font-size: 12px
+          line-height: 15px
+      &-group
+        max-width: 100%
+      &-item
+        height: 56px
+        input
+          font-size: 14px
+          padding-left: 52px
+        &::after
+          left: 20px
+          top: 54%
+        &.name
+          &::after
+            width: 16px
+            height: 24px
+        &.phone
+          &::after
+            width: 18px
+            height: 24px
+  &.calculate
+    .form__description p
+      font-size: 14px
+      line-height: 17px
+    .form-item
+      height: 64px
+      +media-breakpoint-down(sm)
+        height: 48px
+      &::after
+        display: none
+      input
+        padding-left: 37px
+        font-size: 14px
+        line-height: 17px
+        +media-breakpoint-down(sm)
+          padding-left: 20px
+      &.message
+        height: 104px
+        +media-breakpoint-down(sm)
+          height: 103px
+        textarea
+          height: 100px
+          padding: 21px 0 10px 37px
+          font-size: 14px
+          +media-breakpoint-down(sm)
+            padding: 20px 0 10px 20px
+  .form
+    padding: 48px 50px
+    +media-breakpoint-down(sm)
+      padding: 32px 25px
+    &__title
+      +media-breakpoint-down(md)
+        font-size: 32px
+        max-width: 60%
+      +media-breakpoint-down(sm)
+        font-size: 24px
+        line-height: 22px
+    &__description
+      p
+        margin: 0
+        +media-breakpoint-down(xs)
+          font-size: 10px
+          line-height: 12px
+    &-group
+      max-width: 92%
+      input
+        +media-breakpoint-down(sm)
+          padding-left: 18px
+          font-size: 12px
+    &-item
+      margin-bottom: 24px
+      +media-breakpoint-down(sm)
+        height: 48px
+      +media-breakpoint-down(xs)
+        margin-bottom: 16px
+      &.message
+        +media-breakpoint-down(sm)
+          height: 100px
+          border-radius: 30px
+        +media-breakpoint-down(xs)
+          height: 99px
+        textarea
+          +media-breakpoint-down(sm)
+            height: 96px
+            padding: 15px 0 10px 18px
+            border-radius: 30px
+      &::after
+        +media-breakpoint-down(sm)
+          display: none
+    &-btn
+      +media-breakpoint-down(sm)
+        padding: 20px 0
+        font-size: 14px
+        width: 100%
+  &-img
+    position: absolute
+    top: 0
+    right: 0
+    width: 580px
+    height: 100%
+    +media-breakpoint-down(lg)
+      width: 500px
+    +media-breakpoint-down(md)
+      display: none
+    img
+      max-width: 100%
+      height: 100%
+      width: 100%
+      object-fit: cover
+  &-close
+    position: absolute
+    top: 0
+    right: 0
+    width: 80px
+    height: 80px
+    background: $white
+    border-bottom-left-radius: 150px
+    cursor: pointer
+    +media-breakpoint-down(md)
+      background: linear-gradient(90deg, rgba(142, 158, 171, 0.25) 0%, rgba(238, 242, 243, 0.25) 100%)
+    +media-breakpoint-down(sm)
+      width: 64px
+      height: 64px
+    img
+      position: absolute
+      top: 18px
+      right: 18px
+      +media-breakpoint-down(sm)
+        top: 13px
+        right: 13px

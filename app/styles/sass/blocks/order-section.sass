@@ -1,0 +1,66 @@
+.order-section
+  position: relative
+  width: 100%
+  height: 100%
+  background-image: url(../images/dist/order-section-bg.png)
+  background-size: cover
+  background-position: center center
+  text-align: center
+  padding-top: 70px
+  padding-bottom: 100px
+  +media-breakpoint-down(sm)
+    padding-bottom: 80px
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: linear-gradient(173.89deg, rgba(30, 30, 30, 0.8) 4.83%, rgba(30, 30, 30, 0) 119.56%)
+  &-title
+    z-index: 1
+    color: $white
+    max-width: 638px
+    margin: 0 auto !important
+    +media-breakpoint-down(md)
+      font-size: 32px !important
+      line-height: 38px !important
+    +media-breakpoint-down(sm)
+      font-size: 24px !important
+      line-height: 29px !important
+    span
+      font-weight: 700
+  &-description
+    margin: 30px 0 40px
+    position: relative
+    z-index: 1
+    font-size: 18px
+    line-height: 32px
+    color: $white
+    font-weight: 300
+  &-btn
+    position: relative
+    display: inline-block
+    .arrow
+      position: absolute
+      top: -73px
+      right: -200px
+      user-select: none
+      transform: rotate(20deg)
+      +media-breakpoint-down(sm)
+        max-width: 120px
+        top: -60px
+        right: -140px
+      +media-breakpoint-down(xs)
+        max-width: 90px
+        top: -40px
+        right: -100px
+
+@media screen and ( max-width: 480px )
+  .order-section-btn .arrow
+    max-width: 50px
+    top: -22px
+    right: -60px
+    transform: rotate(0)
+      
