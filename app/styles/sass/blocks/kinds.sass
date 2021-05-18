@@ -1,0 +1,114 @@
+.kinds-block
+  position: relative
+  padding: 80px 0
+  +media-breakpoint-down(sm)
+    padding: 40px 0
+  &-title
+    margin-bottom: 30px
+  &-description
+    max-width: 485px
+    font-size: 18px
+    line-height: 32px
+    margin-bottom: 30px
+    +media-breakpoint-down(md)
+      font-size: 16px
+      line-height: 26px
+    +media-breakpoint-down(sm)  
+      font-size: 14px
+      line-height: 25px
+  &-list
+    position: relative
+    display: flex
+    justify-content: space-between
+    +media-breakpoint-down(md)
+      flex-wrap: wrap
+  &-item
+    position: relative
+    width: 24%
+    height: 400px
+    background-size: cover
+    +media-breakpoint-down(lg)
+      height: 350px
+    +media-breakpoint-down(md)
+      width: 49%
+      margin-bottom: 20px
+    +media-breakpoint-down(sm)
+      height: 300px
+    +media-breakpoint-down(xs)
+      height: 200px
+      margin-bottom: 10px
+    &:hover
+      .kinds-block
+        &-item
+          &__title
+            bottom: 62px
+      &::after
+        opacity: 1
+    &::after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: rgba(0,0,0,.5)
+      transition: $trs
+      opacity: 0
+    &__title
+      position: absolute
+      bottom: 48px
+      left: 48px
+      font-size: 18px
+      display: block
+      line-height: 3px
+      color: $white
+      transition: $trs
+      z-index: 3
+      +media-breakpoint-down(lg)
+        left: 20px
+        bottom: 40px
+        font-size: 16px
+      +media-breakpoint-down(xs)
+        font-size: 12px
+  &-flex
+    display: flex
+  &-left
+    flex: 0 0 65%
+    +media-breakpoint-down(md)
+      flex: 0 0 100%
+  &-right
+    flex: 0 0 35%
+    +media-breakpoint-down(md)
+      display: none
+    img
+      max-width: 100%
+      height: auto
+      margin-top: -40px
+
+.text-line
+  position: relative
+  padding-left: 70px
+  +media-breakpoint-down(md)
+    padding-left: 0
+  &-item
+    max-width: 75%
+    margin-bottom: 32px
+    +media-breakpoint-down(md)
+      max-width: 100%
+      margin-bottom: 25px
+    &:last-child
+      margin-bottom: 0
+    &__title
+      font-size: 18px
+      line-height: 32px
+      font-weight: 400
+    &__descr
+      font-weight: 300
+      font-size: 18px
+      line-height: 32px
+      +media-breakpoint-down(md)
+        font-size: 14px
+        line-height: 25px
+      p
+        margin: 0
+        

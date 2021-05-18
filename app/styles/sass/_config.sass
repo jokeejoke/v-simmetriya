@@ -26,7 +26,8 @@ $gutter: $grid-gutter-width
 @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
 @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
 @import 'node_modules/swiper/swiper-bundle.min' // Swiper Slider
-@import 'node_modules/magnific-popup/dist/magnific-popup'
+@import 'node_modules/lightgallery/dist/css/lightgallery.min'
+
 
 // FONTS LOAD SECTION
 
@@ -67,6 +68,9 @@ body
 	min-width: 320px
 	position: relative
 	overflow-x: hidden
+	background: #fff
+	&.home
+		background: $backgroundColor
 
 .container
 	padding-left: 0
@@ -80,5 +84,19 @@ body
 		padding-left: 15px
 		padding-right: 15px
 
-.mfp-content
-	padding: 60px 0
+.fancybox-content
+	padding: 0
+.fancybox-slide--html .fancybox-close-small
+	display: none
+.fancybox-can-pan .fancybox-content, .fancybox-can-swipe .fancybox-content
+	cursor: default
+.fancybox-slide
+	padding: 40px 0
+
+.lg-sub-html
+	display: none
+
+.grey-bg
+	background: $backgroundColor
+.white-bg
+	background: #fff

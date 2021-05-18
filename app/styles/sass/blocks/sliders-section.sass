@@ -49,7 +49,7 @@
           width: 100%
     &__text
       flex: 0 0 58%
-      padding-left: 82px
+      padding-left: 81px
       margin-top: -5px
       +media-breakpoint-down(lg)
         padding-left: 42px
@@ -92,7 +92,7 @@
 
 .slider-carousel
   position: absolute
-  bottom: 50px
+  bottom: 40px
   right: 0
   max-width: 62%
   +media-breakpoint-down(md)
@@ -168,6 +168,36 @@
       +media-breakpoint-down(xs)
         font-size: 10px
         word-break: unset
+    &__ticker
+      position: absolute
+      top: 0
+      right: 0
+      width: 100px
+      height: 100px
+      background: $gr-blue
+      clip-path: polygon(0 0, 100% 100%, 100% 0)
+      color: #fff
+      z-index: 3
+      +media-breakpoint-down(sm)
+        width: 90px
+        height: 90px
+      +media-breakpoint-down(xs)
+        width: 70px
+        height: 70px
+      span
+        display: block
+        position: absolute
+        top: 17px
+        right: 0
+        text-align: center
+        font-size: 9px
+        transform: rotate(45deg)
+        +media-breakpoint-down(sm)
+          font-size: 8px
+        +media-breakpoint-down(xs)
+          top: 10px
+          right: -3px
+          font-size: 7px
   &-controls
     position: absolute
     bottom: -15px
@@ -221,7 +251,7 @@
     cursor: pointer
     transform: translateY(-50%)
 
-.interroom-slider
+.mb-75
   margin-bottom: 75px
   +media-breakpoint-down(sm)
     margin-bottom: 40px

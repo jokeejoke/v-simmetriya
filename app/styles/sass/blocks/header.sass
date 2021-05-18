@@ -14,6 +14,7 @@
     position: relative
     display: flex
     align-items: center
+    z-index: 1
     +media-breakpoint-down(lg)
       justify-content: flex-end
     +media-breakpoint-down(md)
@@ -31,6 +32,7 @@
       padding-top: 70px
       padding-bottom: 200px
       overflow: scroll
+      z-index: 5
     &.active
       visibility: visible
       opacity: 1

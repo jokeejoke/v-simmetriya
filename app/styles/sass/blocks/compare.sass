@@ -1,0 +1,87 @@
+.compare
+  position: relative
+  display: flex
+  justify-content: space-between
+  margin-top: 25px
+  +media-breakpoint-down(md)
+    overflow: auto
+  &-wrapper
+    width: 100%
+  &-table
+    width: 100%
+    margin-top: 40px
+    border: 1px solid rgba(30, 30, 30, 0.1)
+    display: none
+    &.active
+      display: table
+    tbody
+      tr
+        border-bottom: 1px solid rgba(30, 30, 30, 0.1)
+        td
+          font-size: 18px
+          font-weight: 300
+          +media-breakpoint-down(md)
+            font-size: 14px
+          &:first-child
+            width: 294px
+            padding: 0 15px
+            text-align: left
+            font-weight: 500
+            +media-breakpoint-down(md)
+              width: 223px
+        th
+          font-weight: 500
+          font-size: 18px
+          +media-breakpoint-down(md)
+            font-size: 14px
+          &:first-child
+            width: 294px
+            padding: 0 15px
+            text-align: left
+            +media-breakpoint-down(md)
+              width: 223px
+      th,td
+        border-right: 1px solid rgba(30, 30, 30, 0.1)
+        padding: 33px 0
+        text-align: center
+        +media-breakpoint-down(md)
+          padding: 18px 0
+  &-btn
+    border: none
+    background: transparent
+    font-weight: 300
+    font-size: 18px
+    line-height: 32px
+    padding-left: 70px
+    position: relative
+    +media-breakpoint-down(md)
+      font-size: 16px
+    +media-breakpoint-down(sm)
+      font-size: 14px
+      line-height: 25px
+      padding-left: 60px
+    &.active
+      &::before
+        display: none
+    &::after
+      content: ""
+      position: absolute
+      top: 50%
+      left: 0
+      width: 54px
+      height: 1px
+      background: $gr-darkGrey
+      transform: translateY(-50%)
+      +media-breakpoint-down(sm)
+        width: 46px
+    &::before
+      content: ""
+      position: absolute
+      top: 50%
+      left: 15px
+      width: 26px
+      height: 1px
+      background: $gr-darkGrey
+      transform: translateY(-50%) rotate(90deg)
+      +media-breakpoint-down(sm)
+        width: 20px

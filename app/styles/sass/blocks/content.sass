@@ -1,0 +1,37 @@
+.content
+  position: relative
+  padding-top: 35px
+  &.per
+    +media-breakpoint-down(md)
+      padding-top: 0
+
+.small-info
+  position: relative
+  padding-bottom: 80px
+  +media-breakpoint-down(sm)
+    padding-bottom: 40px
+  &-title
+    margin-bottom: 48px !important
+  &-wrapper
+    position: relative
+    display: flex
+  &-text
+    margin-left: 24px
+    +media-breakpoint-down(sm)
+      margin-left: 16px
+    p
+      margin: 0 0 20px
+      +media-breakpoint-down(md)
+        font-size: 14px
+        line-height: 25px
+        font-weight: 300
+      &:last-child
+        margin: 0
+  &-icon
+    margin-top: 5px
+    flex: 0 0 48px
+    +media-breakpoint-down(sm)
+      flex: 0 0 24px
+    img
+      max-width: 100%
+      height: auto

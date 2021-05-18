@@ -4,21 +4,24 @@ import Swiper, {
 	Pagination,
 	Navigation
 } from 'swiper';
-import magnificPopup from 'magnific-popup';
+import lightGallery from 'lightgallery';
+
+require('~/app/js/vendor/fancybox/dist/jquery.fancybox.min.js');
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  $('.open-popup').magnificPopup({
-    type:'inline',
-    removalDelay: 300,
-    mainClass: 'mfp-fade',
-    showCloseBtn: false,
-    midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-  });
+  $(".gallery-items").lightGallery({});
+
   $(".form-popup-close").on("click", function() {
-    $.magnificPopup.close()
+    $.fancybox.close();
+  });
+
+  $(".compare-btn").on("click", function () {
+    $(this).toggleClass("active");
+    $(".compare-table").toggleClass("active");
   })
+  
 
   $(window).scroll(function() {
 		if ($(this).scrollTop() > $(this).height()) {
@@ -30,7 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('.to-top').on('click', function() {
 		$('html, body').stop().animate({ scrollTop: 0}, 'slow', 'swing')
-	})
+	});
+
+  $(".gallery-tab-item").not(":first").hide();
+  $(".gallery-wrapper .gallery-tab").click(function() {
+    $(".gallery-wrapper .gallery-tab").removeClass("active").eq($(this).index()).addClass("active");
+    $(".gallery-tab-item").hide().eq($(this).index()).fadeIn()
+  }).eq(0).addClass("active");
+
+   
 
 	function showContacts () {
     const $icon = document.querySelector(".contacts-mobile-icon");
@@ -73,13 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Init Slider
   Swiper.use([Autoplay, Pagination, Navigation]);
 
-  function initSlider (selector, paginationSelector, loop = false) {
+  function initSlider (selector, paginationSelector) {
     var slider = new Swiper(selector, {
       slidesPerView: 3,
       spaceBetween: 5,
       speed: 800,
       freeMode: true,
-      loop: false,
+      autoplay: false,
+      loop: true,
       //centeredSlides: "auto",
       pagination: {
         el: paginationSelector,
@@ -97,11 +109,13 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       breakpoints: {
         992: {
-          loop: loop,
+          loop: true,
           spaceBetween: 20,
+          autoplay: true
         },
         768: {
           spaceBetween: 20,
+          autoplay: true
         }
       }
     });
@@ -111,8 +125,47 @@ document.addEventListener('DOMContentLoaded', () => {
   showContacts();
   hamburgerMenu();
   initSlider(".office-slider .slider-carousel", ".office-slider .slider-carousel-pagination");
-  initSlider(".plumbing-slider .slider-carousel", ".plumbing-slider .slider-carousel-pagination", true);
-  initSlider(".interroom-slider .slider-carousel", ".interroom-slider .slider-carousel-pagination", true);
+  initSlider(".plumbing-slider .slider-carousel", ".plumbing-slider .slider-carousel-pagination");
+  initSlider(".interroom-slider .slider-carousel", ".interroom-slider .slider-carousel-pagination");
+  initSlider(".loft-slider .slider-carousel", ".loft-slider .slider-carousel-pagination");
+  initSlider(".sliding-slider .slider-carousel", ".sliding-slider .slider-carousel-pagination");
+
+
+  // Models Slider
+  var modelsSlider = new Swiper(".models-slider .slider-carousel", {
+    slidesPerView: 2,
+    spaceBetween: 5,
+    speed: 800,
+    freeMode: true,
+    autoplay: true,
+    loop: false,
+    //centeredSlides: "auto",
+    pagination: {
+      el: ".models-slider .slider-carousel-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        if (index < 9) {
+          index = '0' + (index + 1);
+        }
+        return '<span class="' + className + '">' + (index) + "</span>";
+      },
+    },
+    navigation: {
+      nextEl: ".slider-carousel__next",
+      prevEl: ".slider-carousel__prev",
+    },
+    breakpoints: {
+      992: {
+        spaceBetween: 20,
+        slidesPerView: 4,
+        autoplay: false
+      },
+      768: {
+        spaceBetween: 20,
+        slidesPerView: 3,
+      }
+    }
+  });
   
   // Запускаем функции в десктопах и на мобильных устройствах
   if (window.innerWidth <= 992) {
@@ -120,7 +173,9 @@ document.addEventListener('DOMContentLoaded', () => {
     showDropdownMenu(".dropdown .has-child .parent-link");
   }
   if (window.innerWidth <= 768) {
-    document.querySelector(".main-section-btn").innerHTML = "Рассчитать стоимость";
+    if (document.querySelector(".main-section-btn")) {
+      document.querySelector(".main-section-btn").innerHTML = "Рассчитать стоимость";
+    }  
   }
 
   window.addEventListener("resize", function() {

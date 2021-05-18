@@ -1,0 +1,46 @@
+.contacts
+  &-section
+    position: relative
+    padding: 20px 0 80px
+    +media-breakpoint-down(md)
+      padding: 20px 0 40px
+  &-item
+    position: relative
+    display: flex
+    &__icon
+      flex: 0 0 48px
+      height: 48px
+      margin-right: 27px
+      +media-breakpoint-down(md)
+        height: 24px
+        flex: 0 0 24px
+      img
+        max-width: 100%
+        height: auto
+    &__list
+      ul
+        margin: 0
+        padding: 0
+        list-style: none
+        li
+          font-size: 18px
+          line-height: 32px
+          font-weight: 300
+          +media-breakpoint-down(md)
+            font-size: 14px
+            line-height: 25px
+          a
+            color: $textColor
+            &:hover
+              text-decoration: none
+
+.map
+  position: relative
+  margin-top: 80px
+  +media-breakpoint-down(md)
+    margin-top: 40px
+  iframe
+    height: 636px
+    width: 100%
+    +media-breakpoint-down(md)
+      height: 500px

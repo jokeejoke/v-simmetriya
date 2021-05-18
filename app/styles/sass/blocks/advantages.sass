@@ -30,8 +30,6 @@
     +media-breakpoint-down(lg)
       padding-bottom: 40px
     +media-breakpoint-down(md)
-      padding-top: 50px
-    +media-breakpoint-down(sm)
       display: none
   &__item
     position: relative
@@ -40,7 +38,6 @@
   &__icon
     width: 48px
     height: 48px
-    margin-left: -15px
     +media-breakpoint-down(md)
       width: 80px
       height: 60px
@@ -59,3 +56,10 @@
       font-size: 14px
       line-height: 25px
       color: rgba(30, 30, 30, 0.9)
+  &-items
+    display: flex
+    justify-content: space-between
+    .advantages__item
+      flex: 0 0 19%
+    .advantages__description
+      max-width: 90%

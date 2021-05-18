@@ -3,8 +3,12 @@
   margin: 0 auto
   background: $white
   overflow: hidden
+  width: 1140px
+  +media-breakpoint-down(lg)
+    width: 1020px
   +media-breakpoint-down(md)
     max-width: 860px
+    width: 100%
   +media-breakpoint-down(sm)
     max-width: 540px
   +media-breakpoint-down(xs)
@@ -12,6 +16,8 @@
   &.callback
     max-width: 400px
     border-radius: 15px
+    +media-breakpoint-down(xs)
+      max-width: 95%
     .form
       &-btn
         padding: 20px 30px
@@ -101,6 +107,8 @@
           line-height: 12px
     &-group
       max-width: 92%
+      +media-breakpoint-down(sm)
+        max-width: 100%
       input
         +media-breakpoint-down(sm)
           padding-left: 18px

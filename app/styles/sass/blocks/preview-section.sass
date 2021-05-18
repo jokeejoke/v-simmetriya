@@ -7,6 +7,33 @@
   &-title
   &.grey
     background: $white
+  &.no-home
+    +media-breakpoint-down(sm)
+      padding: 40px 0
+    .info-block
+      margin-top: 0
+      +media-breakpoint-down(sm)
+        flex-direction: column
+      &-text
+        +media-breakpoint-down(sm)
+          margin-bottom: 0
+    .info-block-left img
+      max-height: 430px
+      height: auto
+      +media-breakpoint-down(sm)
+        max-height: 300px   
+        max-width: 100%
+        width: 100%
+    .info-block-left
+      flex: 0 0 35%
+      +media-breakpoint-down(md)
+        display: block
+    .info-block-right
+      flex: 0 0 65%
+      +media-breakpoint-down(md)
+        flex: 0 0 60%
+      +media-breakpoint-down(sm)
+        margin-top: 32px
     
 
 .info-block
@@ -68,6 +95,17 @@
         line-height: 25px
       b, strong
         font-weight: 500
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      li
+        font-weight: 300
+        font-size: 18px
+        line-height: 32px
+        +media-breakpoint-down(lg)
+          font-size: 14px
+          line-height: 25px
   &-cards
     position: relative
     display: flex
