@@ -1,2 +1,39 @@
 @import config
 @import "blocks/**/*"
+
+.not-found
+  position: relative
+  height: 100vh
+  background-image: url(../images/dist/404.png)
+  background-size: cover
+  background-position: top center
+  .container
+    position: relative
+    height: 100%
+  &__text
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    +media-breakpoint-down(md)
+      left: 50%
+      transform: translate(-50%, -50%)
+    .title
+      font-size: 144px
+      font-weight: 700
+      +media-breakpoint-down(md)
+        font-size: 122px
+    p
+      font-size: 18px
+      font-weight: 300
+      +media-breakpoint-down(md)
+        text-align: center
+        font-size: 14px
+      a
+        color: $textColor
+        font-weight: 400
+        &:hover
+          text-decoration: none
+
+.jGrowl
+  z-index: 100000 !important

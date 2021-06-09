@@ -18,6 +18,7 @@
     border-radius: 15px
     +media-breakpoint-down(xs)
       max-width: 95%
+      border-radius: 0
     .form
       &-btn
         padding: 20px 30px
@@ -51,6 +52,8 @@
         input
           font-size: 14px
           padding-left: 52px
+          +media-breakpoint-down(sm)
+            padding-left: 18px
         &::after
           left: 20px
           top: 54%
